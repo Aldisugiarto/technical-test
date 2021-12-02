@@ -11,8 +11,8 @@ console.log("/------------------------------Soal No 1---------------------------
 function checkXO(inputWord){
     let index, sX = 0, sO = 0;
     let result = false;
-    inputWord = inputWord.toLowerCase();
-    for(index = 0; index < inputWord.length; index++){
+    inputWord = inputWord.toLowerCase();    //Change to lower case string format
+    for(index = 0; index < inputWord.length; index++){  //Do the iteration to get sum of X and O
         if(inputWord[index] == 'x'){
             sX += 1;
             // console.log("Hello");
@@ -29,13 +29,14 @@ function checkXO(inputWord){
             // DO NOTHING   
         }
     }
-    
+    //Checking the number of X and O is same
     if(sX == sO){
         result = true;
     }
     else{
         result = false;
     }
+    //Return value of function
     return result;
 }
 
@@ -52,11 +53,11 @@ console.log("/------------------------------Soal No 2---------------------------
 
 /**Function */
 function changeString(inputWord){
-    if(inputWord){     
+    if(inputWord){      //Checking for string data type
         var obj = {};
         let index;
         inputWord = inputWord.toLowerCase();
-        for(index = 0; index < inputWord.length; index++){
+        for(index = 0; index < inputWord.length; index++){  //Iteration to get number of each character
             if(obj[inputWord[index]]){
                 obj[inputWord[index]] += 1;
             }else{
@@ -64,17 +65,19 @@ function changeString(inputWord){
             }
         }
         let newString = "";
-        for(index = 0; index < inputWord.length; index++){
+        for(index = 0; index < inputWord.length; index++){  //Iteration to change string value
             if (obj[inputWord[index]] > 1) {
                 newString += ")";
             } else {
                 newString += "(";
             }
         }
+        //Return value of function
         return newString;
     }
 }
 
+//User input from console, to get new string
 const inptString = prompt('Input string to change string: ');
-res = changeString(inptString);
+res = changeString(inptString); 
 console.log("Result change string: " + res);
